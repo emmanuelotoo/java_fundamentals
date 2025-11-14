@@ -10,17 +10,33 @@ public class GradeMessage {
         String grade = scanner.next();
         scanner.close();
 
-        // Using the enhanced switch statement
+        String message;
 
-        String message = switch (grade) {
-            case "A" -> "Excellent job!";
-            case "B" -> "Great job!";
-            case "C" -> "Good job!";
-            case "D" -> "You need to work harder";
-            case "F" -> "Uh oh!";
-            default -> "Invalid grade";
-        };
+        switch (grade) {
+            case "A":
+                message = "Excellent job!";
+                break;
 
+            case "B":
+                message = "Great job!";
+                break;
+
+            case "C":
+                message = "Good job!";
+                break;
+
+            case "D":
+                message = "You need to work harder";
+                break;
+
+            case "F":
+                message = "Uh oh!";
+                break;
+
+            default:
+                message = "Invalid grade";
+                break;
+        }
         System.out.println(message);
     }
 }
