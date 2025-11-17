@@ -6,7 +6,10 @@ public class Rectangle {
     private double width;
     private int size = 4;
 
-    public Rectangle() {}
+    public Rectangle() {
+        setLength(0);
+        setWidth(0);
+    }
 
     public Rectangle(double length, double width) {
         setLength(length);
