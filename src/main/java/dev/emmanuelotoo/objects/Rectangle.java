@@ -6,6 +6,14 @@ public class Rectangle {
     private double width;
     private int size = 4;
 
+    public Rectangle() {}
+
+    public Rectangle(double length, double width) {
+        setLength(length);
+        setWidth(width);
+    }
+
+
     public double calculatePerimeter() {
         return (2 * length) + (2 * width);
     }
