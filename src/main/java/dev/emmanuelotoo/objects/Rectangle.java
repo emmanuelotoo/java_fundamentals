@@ -2,9 +2,9 @@ package dev.emmanuelotoo.objects;
 
 public class Rectangle {
 
-    private double length;
-    private double width;
-    private int size = 4;
+    protected double length;
+    protected double width;
+    protected int sides = 4;
 
     public Rectangle() {
         setLength(0);
@@ -41,11 +41,11 @@ public class Rectangle {
         this.width = width;
     }
 
-    public int getSize() {
-        return size;
+    public int getSides() {
+        return sides;
     }
 
-    public void setSize(int size) {
-        this.size = size;
+    public void setSides(int sides) {
+        this.sides = sides;
     }
 }
