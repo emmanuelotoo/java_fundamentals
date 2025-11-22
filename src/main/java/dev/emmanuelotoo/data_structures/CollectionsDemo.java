@@ -5,10 +5,10 @@ import java.util.*;
 public class CollectionsDemo {
 
     public static void main(String[] args) {
-//        setDemo();
+        setDemo();
 //        listDemo();
 //        queueDemo();
-        mapDemo();
+//        mapDemo();
     }
     public static void setDemo() {
         Set fruits = new HashSet();
@@ -16,6 +16,13 @@ public class CollectionsDemo {
         fruits.add("banana");
         fruits.add("lemon");
         fruits.add("apple");
+
+        var i = fruits.iterator();
+        while (i.hasNext()) {
+            System.out.println(i.next());
+        }
+
+
         fruits.remove("lemon");
         System.out.println(fruits);
 
