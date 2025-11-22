@@ -7,7 +7,8 @@ public class CollectionsDemo {
     public static void main(String[] args) {
 //        setDemo();
 //        listDemo();
-        queueDemo();
+//        queueDemo();
+        mapDemo();
     }
     public static void setDemo() {
         Set fruits = new HashSet();
@@ -54,5 +55,26 @@ public class CollectionsDemo {
         System.out.println("head of queue: " + fruits.peek());
         System.out.println(fruits);
 
+    }
+    public static void mapDemo() {
+        Map fruitCalories = new HashMap();
+        fruitCalories.put("apple", 95);
+        fruitCalories.put("lemon", 20);
+        fruitCalories.put("banana", 105);
+        fruitCalories.put("orange", 45);
+        fruitCalories.putIfAbsent("lemon", 17);
+        fruitCalories.remove("lemon");
+
+        System.out.println(fruitCalories);
+        System.out.println("banana calories? " + fruitCalories.get("banana"));
+        System.out.println("contains orange? " + fruitCalories.containsKey("orange"));
+
+        Map immutableFruitCalories = Map.of(
+                "apple", 31,
+                "banana", 313,
+                "orange", 21
+        );
+
+        System.out.println(immutableFruitCalories);
     }
 }
