@@ -1,15 +1,13 @@
 package dev.emmanuelotoo.data_structures;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class CollectionsDemo {
 
     public static void main(String[] args) {
 //        setDemo();
-        listDemo();
+//        listDemo();
+        queueDemo();
     }
     public static void setDemo() {
         Set fruits = new HashSet();
@@ -43,5 +41,18 @@ public class CollectionsDemo {
 
         List moreFruits = List.of("cherry", "plum");
         System.out.println(moreFruits);
+    }
+    public static void queueDemo() {
+        Queue fruits = new LinkedList();
+        fruits.add("apple");
+        fruits.add("lemon");
+        fruits.add("pear");
+        fruits.add("apple");
+
+        var removed = fruits.remove();
+        System.out.println("removed: " + removed);
+        System.out.println("head of queue: " + fruits.peek());
+        System.out.println(fruits);
+
     }
 }
