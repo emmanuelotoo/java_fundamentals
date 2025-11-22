@@ -5,10 +5,10 @@ import java.util.*;
 public class CollectionsDemo {
 
     public static void main(String[] args) {
-        setDemo();
+//        setDemo();
 //        listDemo();
 //        queueDemo();
-//        mapDemo();
+        mapDemo();
     }
     public static void setDemo() {
         Set fruits = new HashSet();
@@ -35,20 +35,35 @@ public class CollectionsDemo {
 
     }
     public static void listDemo() {
-        List fruits = new ArrayList();
+        List<String> fruits = new ArrayList();
         fruits.add("apple");
         fruits.add("lemon");
         fruits.add("pear");
 
         fruits.set(1, "grape");
         fruits.add("lemon");
-        fruits.remove("pear"); // removes first instance of object found
-        System.out.println("index 1: " + fruits.get(1));
-        System.out.println(fruits.indexOf("grape"));
-        System.out.println(fruits.lastIndexOf("lemon"));
 
-        List moreFruits = List.of("cherry", "plum");
-        System.out.println(moreFruits);
+//        for (String fruit : fruits) {
+//            System.out.println(fruit);
+//        }
+
+
+        fruits.forEach(f -> System.out.println(f));
+        fruits.forEach(System.out::println); // method reference
+
+
+        fruits.forEach(f ->{
+            f = "fruits" + f;
+            System.out.println(f);
+        });
+
+//        fruits.remove("pear"); // removes first instance of object found
+//        System.out.println("index 1: " + fruits.get(1));
+//        System.out.println(fruits.indexOf("grape"));
+//        System.out.println(fruits.lastIndexOf("lemon"));
+//
+//        List moreFruits = List.of("cherry", "plum");
+//        System.out.println(moreFruits);
     }
     public static void queueDemo() {
         Queue fruits = new LinkedList();
@@ -64,7 +79,7 @@ public class CollectionsDemo {
 
     }
     public static void mapDemo() {
-        Map fruitCalories = new HashMap();
+        Map<String, Integer> fruitCalories = new HashMap();
         fruitCalories.put("apple", 95);
         fruitCalories.put("lemon", 20);
         fruitCalories.put("banana", 105);
@@ -72,16 +87,22 @@ public class CollectionsDemo {
         fruitCalories.putIfAbsent("lemon", 17);
         fruitCalories.remove("lemon");
 
-        System.out.println(fruitCalories);
-        System.out.println("banana calories? " + fruitCalories.get("banana"));
-        System.out.println("contains orange? " + fruitCalories.containsKey("orange"));
+//        for (Map.Entry calorieInfo : fruitCalories.entrySet()) {
+//            System.out.println(calorieInfo.getKey() + ": " + calorieInfo.getValue());
+//        }
 
-        Map immutableFruitCalories = Map.of(
-                "apple", 31,
-                "banana", 313,
-                "orange", 21
-        );
+        fruitCalories.forEach((k, v) -> System.out.println(k + ": " + v));
 
-        System.out.println(immutableFruitCalories);
+//        System.out.println(fruitCalories);
+//        System.out.println("banana calories? " + fruitCalories.get("banana"));
+//        System.out.println("contains orange? " + fruitCalories.containsKey("orange"));
+//
+//        Map immutableFruitCalories = Map.of(
+//                "apple", 31,
+//                "banana", 313,
+//                "orange", 21
+//        );
+//
+//        System.out.println(immutableFruitCalories);
     }
 }
