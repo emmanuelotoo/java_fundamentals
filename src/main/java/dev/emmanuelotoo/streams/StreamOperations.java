@@ -1,6 +1,7 @@
 package dev.emmanuelotoo.streams;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamOperations {
 
@@ -16,7 +17,12 @@ public class StreamOperations {
     public static void main(String[] args) {
 //        anyMatchDemo();
 //        allMatch();
-        filterDemo();
+//        filterDemo();
+//        mapDemo();
+//        reduceDemo();
+//        intReduceDemo();
+//        collectDemo();
+        multiOperationDemo();
     }
 
 
@@ -36,5 +42,43 @@ public class StreamOperations {
         veggies.stream()
                 .filter(v-> v.startsWith("c"))
                 .forEach(System.out::println);
+    }
+
+    public static void mapDemo(){
+        veggies.stream()
+                .map(String::toUpperCase)
+                .forEach(System.out::println);
+    }
+
+    public static void reduceDemo() {
+        System.out.println(
+                veggies.stream()
+                        .sorted()
+                        .reduce("", (a, b) -> a + " | " + b));
+    }
+
+    public static void intReduceDemo() {
+        List<Integer> numbers = List.of(2, 4, 6, 8, 10);
+        var sum = numbers.stream()
+                .reduce(0, Integer::sum);
+        System.out.println(sum);
+    }
+
+    public static void collectDemo() {
+        List veggiesEndingWithS = veggies.stream()
+                .filter(v->v.endsWith("s"))
+                .collect(Collectors.toList());
+
+        veggiesEndingWithS.forEach(System.out::println);
+    }
+
+    public static void multiOperationDemo() {
+        veggies.stream()
+                .sorted()
+                .filter(v-> v.startsWith("c"))
+                .map(String::toUpperCase)
+                .map(v-> v.transform(w-> "yummy " + w))
+                .forEach(System.out::println);
+
     }
 }
