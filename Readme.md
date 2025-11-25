@@ -1,4 +1,4 @@
-This project contains folders where I practice various concepts in java for revision purposes.
+This repo contains folders where I practice various concepts in java for revision purposes.
 
 Topics:
 - [x] basics
